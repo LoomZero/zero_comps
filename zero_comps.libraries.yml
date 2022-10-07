@@ -1,0 +1,11 @@
+zero_view.js:
+  js:
+    js/components/zero-view.js: { }
+  dependencies:
+    - zero_ajax_api/ajax
+    - zero_preprocess/comp
+
+zero_view.css:
+  css:
+    component:
+      css/components/zero-view.css: { }

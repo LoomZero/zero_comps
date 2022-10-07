@@ -1,0 +1,11 @@
+name: 'Zero Components'
+type: module
+description: 'Install zero components'
+core_version_requirement: 9.*
+package: zero
+version: 1.0.0
+
+dependencies:
+  - zero_entitywrapper
+  - zero_preprocess
+  - zero_ajax_api

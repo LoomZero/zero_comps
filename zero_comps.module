@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function zero_comps_theme_suggestions_alter(array &$suggestions, array $vars, $hook) {
+  $design = [];
+  if (!empty($vars['design'])) $design = $vars['design'];
+  if (!empty($vars['element']['#design'])) $design = $vars['element']['#design'];
+  if (!is_array($design)) $design = [$design];
+
+  foreach ($design as $item) {
+    $suggestions[] = $hook . '__' . str_replace('-', '_', $item);
+  }
+}

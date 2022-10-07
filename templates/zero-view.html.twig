@@ -1,0 +1,26 @@
+{{ attach_library('zero_comps/zero_view.js') }}
+{{ attach_library('zero_comps/zero_view.css') }}
+
+{% set classes = [
+  'zero-view',
+  no_more ? 'zero-view--no-more',
+  design,
+  design and no_more ? design ~ '--no-more',
+] %}
+
+<div class="{{ classes|join(' ') }}" data-uuid="{{ uuid }}">
+  <template class="zero-view__item-template">${content}</template>
+  {% if filters %}
+    <div class="zero-view__filters {{ design }}__filters">
+      {{ filters }}
+    </div>
+  {% endif %}
+  <div class="zero-view__items {{ design }}__items">
+    {% for item in items %}
+      {{ item }}
+    {% endfor %}
+  </div>
+  <div class="zero-view__more {{ design }}__more">
+    <span class="zero-view__more-trigger {{ design }}__more-trigger">Load More</span>
+  </div>
+</div>
