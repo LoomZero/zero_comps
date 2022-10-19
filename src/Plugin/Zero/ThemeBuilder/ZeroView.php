@@ -74,11 +74,11 @@ class ZeroView extends ZeroThemeBuilderBase {
   }
 
   public function setView(string $view_id, string $view_display = 'master', string $view_mode = 'teaser', int $start_page = 0): self {
-    $this->theme[$this->getKey('mode')] = 'view';
-    $this->theme[$this->getKey('view_id')] = $view_id;
-    $this->theme[$this->getKey('view_display')] = $view_display;
-    $this->theme[$this->getKey('view_mode')] = $view_mode;
-    $this->theme[$this->getKey('start_page')] = $start_page;
+    $this->theme['mode'] = 'view';
+    $this->theme['view_id'] = $view_id;
+    $this->theme['view_display'] = $view_display;
+    $this->theme['view_mode'] = $view_mode;
+    $this->theme['start_page'] = $start_page;
     return $this;
   }
 
@@ -87,11 +87,11 @@ class ZeroView extends ZeroThemeBuilderBase {
   }
 
   public function setEntity(string $entity_type, $entity_id, string $field, string $view_mode = 'teaser'): self {
-    $this->theme[$this->getKey('mode')] = 'entity';
-    $this->theme[$this->getKey('entity_type')] = $entity_type;
-    $this->theme[$this->getKey('entity_id')] = $entity_id;
-    $this->theme[$this->getKey('entity_field')] = $field;
-    $this->theme[$this->getKey('view_mode')] = $view_mode;
+    $this->theme['mode'] = 'entity';
+    $this->theme['entity_type'] = $entity_type;
+    $this->theme['entity_id'] = $entity_id;
+    $this->theme['entity_field'] = $field;
+    $this->theme['view_mode'] = $view_mode;
     return $this;
   }
 
@@ -110,7 +110,7 @@ class ZeroView extends ZeroThemeBuilderBase {
 
     $formElement['#attributes']['data-filter-key'] = $key;
     $formElement['#attributes']['data-filter-trigger'] = $trigger;
-    $this->theme[$this->getKey('filters')][$key] = $formElement;
+    $this->theme['filters'][$key] = $formElement;
     return $this;
   }
 
@@ -121,12 +121,12 @@ class ZeroView extends ZeroThemeBuilderBase {
   }
 
   public function design(string $design) {
-    $this->theme[$this->getKey('design')] = $design;
+    $this->theme['design'] = $design;
     return $this;
   }
 
   public function getOptions(): array {
-    return $this->theme[$this->getKey('options')] ?? [];
+    return $this->theme['options'] ?? [];
   }
 
 }
