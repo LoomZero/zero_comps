@@ -3,7 +3,7 @@ type: module
 description: 'Install zero components'
 core_version_requirement: 9.*
 package: zero
-version: 1.0.1
+version: 1.0.2
 
 dependencies:
   - zero_entitywrapper
