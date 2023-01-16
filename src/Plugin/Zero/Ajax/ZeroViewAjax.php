@@ -27,7 +27,9 @@ class ZeroViewAjax extends ZeroAjaxBase {
     $params = $request->getParams();
 
     if ($params['mode'] === 'view') {
-      $filters = array_filter($params['filters']);
+      $filters = array_filter($params['filters'], function($value) {
+        return strlen($value . '') !== 0;
+      });
 
       $view = new ViewWrapper($params['view_id'], $params['view_display']);
       $view->setExposedInput($filters);

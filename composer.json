@@ -11,9 +11,9 @@
     "source": "http://cgit.drupalcode.org/zero_comps"
   },
   "require": {
-    "composer/installers": "~1.0",
-    "loomzero/zero_preprocess": "~0.10",
-    "loomzero/zero_entitywrapper": "~0.13",
-    "loomzero/zero_ajax_api": "~1.1"
+    "composer/installers": ">=1.0",
+    "loomzero/zero_preprocess": ">=0.10",
+    "loomzero/zero_entitywrapper": ">=0.13",
+    "loomzero/zero_ajax_api": ">=1.1"
   }
 }

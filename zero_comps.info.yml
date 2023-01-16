@@ -1,9 +1,9 @@
 name: 'Zero Components'
 type: module
 description: 'Install zero components'
-core_version_requirement: 9.*
+core_version_requirement: ">=8"
 package: zero
-version: 1.0.2
+version: 1.1.0
 
 dependencies:
   - zero_entitywrapper
