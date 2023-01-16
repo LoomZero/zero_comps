@@ -28,7 +28,7 @@ class ZeroViewAjax extends ZeroAjaxBase {
 
     if ($params['mode'] === 'view') {
       $filters = array_filter($params['filters'], function($value) {
-        return strlen($value . '') !== 0;
+        return strlen($value . '') !== 0; // to fix values like "0"
       });
 
       $view = new ViewWrapper($params['view_id'], $params['view_display']);

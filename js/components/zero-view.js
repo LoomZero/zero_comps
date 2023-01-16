@@ -69,7 +69,17 @@
         this.loadNext();
       });
 
-      console.log(this, settings);
+      const filterValues = {};
+      const queryValues = new URLSearchParams(window.location.search);
+      for (const filter in this.filters) {
+        const value = queryValues.get(filter);
+
+        if (value !== null) {
+          filterValues[filter] = value;
+        }
+      }
+
+      this.setFilters(filterValues, true, false);
     },
 
     loadNext: function() {
@@ -123,7 +133,7 @@
       return true;
     },
 
-    setFilters: function(filters, reactive = true) {
+    setFilters: function(filters, reactive = true, query = true) {
       if (reactive) {
         this.ignoreAction = true;
         for (const key in this.filters) {
@@ -131,7 +141,7 @@
         }
         this.ignoreAction = false;
       }
-      this.update(filters, 0, true);
+      if (query) this.update(filters, 0, true);
     },
 
     getFilters: function() {
